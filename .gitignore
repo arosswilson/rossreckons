@@ -59,6 +59,8 @@ typings/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
+blog/__pycache__/
+rossreckons/__pycache__/
 *.py[cod]
 *$py.class
 
