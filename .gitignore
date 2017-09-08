@@ -57,3 +57,20 @@ typings/
 # dotenv environment variables file
 .env
 
+
+.Python
+.DS_Store
+.coverage
+/.idea
+/bin
+/include
+/lib
+/local
+/dump
+/upload
+/htmlcov
+node_modules/
+__pycache__/
+rossreckons/__pycache__/
+sha.txt
+pip-selfcheck.json

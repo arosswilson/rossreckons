@@ -1,0 +1,23 @@
+.navbar {
+  margin: auto;
+  background: #f5b335;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
+}
+
+.nav-up {
+  top: -40px;
+}
+
+.name {
+  display: inline-block;
+  width: 40%;
+}
+
+.button-group {
+  display: inline-block;
+  width: 50%;
+}
