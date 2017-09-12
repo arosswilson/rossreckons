@@ -127,4 +127,4 @@ STATICFILES_DIRS = [
     os.path.join(REACT_APP_DIR, 'build', 'static'),
 ]
 
-STATIC_URL = '/static/'
+STATIC_URL = '/frontend/public/'
