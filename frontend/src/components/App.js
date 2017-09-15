@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import BannerSection from './BannerSection'
+import AboutMe from './AboutMe'
 import './App.css';
 
 class App extends Component {
@@ -58,9 +60,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <BannerSection img="public/Drawing.png" />
+        <AboutMe />
       </div>
     );
   }
