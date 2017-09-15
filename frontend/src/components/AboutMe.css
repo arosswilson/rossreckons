@@ -1,0 +1,17 @@
+.about-me {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position:relative;
+  background-color:#e8f1f6;
+  color: #0d1a21;
+  top:-40px;
+}
+
+.mememe {
+  width: 50%;
+  margin:auto;
+  padding: 15px;
+  border: 1px solid #0d1a21;
+  background-color: white;
+}
