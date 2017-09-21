@@ -1,11 +1,11 @@
 .navlink {
   text-decoration: none;
-  color: black;
+  color: #333;
   font-weight: bold;
   padding: .25rem 0;
   margin-left: 1rem;
 }
 
 .navlink:hover {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #333;
 }
