@@ -3,15 +3,17 @@
   background-repeat: no-repeat;
   height: 100vh;
   position:relative;
-  background-color:#e8f1f6;
-  color: #0d1a21;
-  top:-40px;
+  background-color:#f3f3f3;
+  color: #333333;
 }
 
 .mememe {
   width: 50%;
   margin:auto;
   padding: 15px;
-  border: 1px solid #0d1a21;
-  background-color: white;
+}
+
+a {
+  text-decoration: none;
+  color: #5bc0de;
 }

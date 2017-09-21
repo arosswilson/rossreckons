@@ -56,9 +56,8 @@ class NavBar extends Component {
       <div className={"navbar" + hiddenClass} ref={(navContainer)=>{this.navContainer = navContainer}}>
         <p className="name">Ross Wilson</p>
         <div className="button-group">
-          <Link destination="#" label="Blog"/>
-          <Link destination="#" label="About"/>
-          <Link destination="#" label="Projects"/>
+          <Link destination="/" label="About"/>
+          <Link destination="/blog/" label="Blog"/>
         </div>
       </div>
     )

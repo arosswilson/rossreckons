@@ -20,5 +20,6 @@ from blog.views import api
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/posts$', api.list_posts),
+    url(r'^api/posts/$', api.list_posts),
+    url(r'^api/posts/(\d+)/$', api.get_post),
 ]

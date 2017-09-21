@@ -4,8 +4,9 @@
 }
 
 .navbar {
+  color:#333;
   margin: auto;
-  background: #f5b335;
+  background: #f3f3f3;
   height: 40px;
   position: fixed;
   top: 0;
@@ -20,9 +21,11 @@
 .name {
   display: inline-block;
   width: 40%;
+  text-align: center;
 }
 
 .button-group {
   display: inline-block;
-  width: 50%;
+  width: 20%;
+  margin-left:25vw;
 }
