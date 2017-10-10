@@ -41,6 +41,17 @@ class ObjectModel(BaseModel):
         return self.name
 
 
+class ContactMessage(BaseModel):
+    first_name = CharField(max_length=50)
+    last_name = CharField(max_length=100)
+    email = EmailField()
+    message = TextField()
+
+    class Meta:
+        db_table = 'contact_message'
+        verbose_name = 'Contact Message'
+
+
 class Post(ObjectModel):
     body = TextField(null=True, blank=True, help_text="*** Be careful pasting from Word.")
     publish_date = DateField(null=True, blank=True)

@@ -14,6 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
 
 
 # Quick-start development settings - unsuitable for production
@@ -55,7 +56,9 @@ ROOT_URLCONF = 'rossreckons.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(REACT_APP_DIR, 'build', 'static'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,11 +124,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
+
 
 STATICFILES_DIRS = [
     os.path.join(REACT_APP_DIR, 'build', 'static'),
-    os.path.join(BASE_DIR, 'public')
 ]
 
-STATIC_URL = '/public/'
+STATIC_URL = '/static/'

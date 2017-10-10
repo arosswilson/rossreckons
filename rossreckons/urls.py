@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from blog.views import api
+from blog.views import api, react
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/posts/$', api.list_posts),
     url(r'^api/posts/(\d+)/$', api.get_post),
+    url(r'^', react.ReactAppView.as_view()),
 ]
