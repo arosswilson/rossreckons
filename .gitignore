@@ -58,6 +58,7 @@ typings/
 .env
 
 # Byte-compiled / optimized / DLL files
+*.pyc
 __pycache__/
 blog/__pycache__/
 rossreckons/__pycache__/
