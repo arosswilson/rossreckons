@@ -1,15 +1,17 @@
 from blog.services import api
 from django.http import JsonResponse
+import logging
+
+logger = logging.getLogger(__name__)
 
 def list_posts(request):
     params = _extract_params(request)
     return JsonResponse(api.list_posts(**params))
 
+
 def get_post(request, post_id):
     params = _extract_params(request)
-    # post_id = int(post_id)
     return JsonResponse(api.get_post(post_id, **params))
-
 
 
 def _extract_params(request, method='GET'):
