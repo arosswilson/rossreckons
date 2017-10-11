@@ -13,7 +13,7 @@ class Post extends Component {
   }
 
   loadPosts() {
-    fetch(`/api/posts/${this.props.match.params.number}`, {
+    fetch(`/api/posts/${this.props.match.params.number}/`, {
       method: "GET",
       headers:{
         "Accept": "application/json",

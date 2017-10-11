@@ -107,6 +107,50 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'standard': {
+            'format': '[%(asctime)s] [%(levelname)s] [%(module)s:%(lineno)s] %(message)s'
+        },
+        'tracer': {
+            'format': '[%(asctime)s] [TRACE] %(message)s'
+        },
+    },
+    'handlers': {
+
+        'console': {
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+            'formatter': 'standard'
+        },
+        'tracer': {
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+            'formatter': 'tracer'
+        },
+    },
+    'loggers': {
+        'rossreckons': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+
+        'django.db': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    }
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
@@ -131,3 +175,4 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

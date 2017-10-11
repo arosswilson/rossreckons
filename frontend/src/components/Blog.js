@@ -15,7 +15,7 @@ class Blog extends Component {
   }
 
   loadPosts() {
-    fetch('/api/posts', {
+    fetch('/api/posts/', {
       method: "GET",
       headers:{
         "Accept": "application/json",
