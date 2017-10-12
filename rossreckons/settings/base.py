@@ -11,20 +11,32 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import json
+
+from django.core.exceptions import ImproperlyConfigured
+
+with open(os.environ.get("ROSSRECKONS_CONFIG")) as f:
+    configs = json.loads(f.read())
+def get_env_var(setting, configs=configs):
+    try:
+        val = configs[setting]
+        if val == 'True':
+            val = True
+        elif val == 'False':
+            val = False
+        return val
+    except KeyError:
+        error_msg = "ImproperlyConfigured: Set {0} environment      variable".format(setting)
+        raise ImproperlyConfigured(error_msg)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CURRENT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.join(CURRENT_DIR, '../')
 REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8v^qp8#o2qwrz&2l&%xrq+iv7f_xh*=6!bmv0uw%yxi=+zlv7$'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -72,22 +84,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'rossreckons.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rossreckons',
-        'USER': 'ross',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
